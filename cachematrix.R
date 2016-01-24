@@ -1,9 +1,10 @@
-## functions to create a "special" matrix object that contains its own inverse and to retrieve the cached inverse 
-## (1) makeCacheMatrix creates a "special" matrix object that caches its inverse
-## (2) cacheSolve returns the cached inverse of the "special" matrix object
+## functions to create and retrieve a special matrix object
+## (1) makeCacheMatrix creates a special matrix object that caches its inverse
+## (2) cacheSolve returns the cached inverse of the special matrix object
+##     or calculates it
 
 
-## creates an "special" matrix object
+## Creates an "special" matrix object
 ## that contains (1) a matrix and (2) its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -21,8 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## returns the inverse of a cached inverse of a matrix
-## (if the cache is not empty), or calculates the inverse and return it
+## returns the cached inverse of a matrix (if the cache is not empty),
+## or calculates the inverse
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
